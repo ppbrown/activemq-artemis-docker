@@ -11,6 +11,10 @@ ARG ACTIVEMQ_DISTRIBUTION_URL
 ENV JMX_EXPORTER_VERSION=0.3.1
 ENV JGROUPS_KUBERNETES_VERSION=0.9.3
 
+# gcp isnt transmitting the value properly. sigh.
+# so hardcode inline
+ENV ACTIVEMQ_ARTEMIS_VERSION=2.9.0
+
 # See https://github.com/hadolint/hadolint/wiki/DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
