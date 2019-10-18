@@ -123,6 +123,9 @@ COPY assets/jmx-exporter-config.yaml /opt/jmx-exporter/etc/
 FROM openjdk:8
 LABEL maintainer="Victor Romero <victor.romero@gmail.com>"
 ARG ACTIVEMQ_ARTEMIS_VERSION
+# gcp isnt transmitting the value properly. sigh.
+# so hardcode inline
+ENV ACTIVEMQ_ARTEMIS_VERSION=2.9.0
 ENV ACTIVEMQ_ARTEMIS_VERSION=$ACTIVEMQ_ARTEMIS_VERSION
 
 # add user and group for artemis
